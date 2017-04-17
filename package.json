@@ -1,0 +1,23 @@
+{
+    "name": "form_validationt",
+    "version": "1.0.0",
+    "description": "Simple slider for ITRex",
+    "main": "index.html",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "jQuery",
+        "Form",
+        "Validation"
+    ],
+    "author": "Yurii Holiuk",
+    "license": "ISC",
+    "devDependencies": {
+        "browser-sync": "^2.18.8",
+        "gulp": "^3.9.1"
+    },
+    "dependencies": {
+        "jquery": "^3.2.0"
+    }
+}

@@ -1,0 +1,36 @@
+.form-group {
+    position: relative;
+}
+
+.error {
+    font-size: 14px;
+    font-weight: bold;
+
+    position: absolute;
+    top: 50%;
+    left: 100%;
+
+    width: 300px;
+    margin-left: 15px;
+    padding: 10px;
+
+    transform: translateY(-50%) translateY(10px);
+
+    color: midnightblue;
+    border: 2px solid lightcoral;
+    border-radius: 5px;
+}
+
+.error::before {
+    position: absolute;
+    top: 50%;
+    left: -8px;
+
+    content: '';
+    transform: translateY(-50%);
+
+    border: 6px solid lightcoral;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-left-width: 0;
+}

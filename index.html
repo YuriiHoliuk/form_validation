@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+    <title>Validation</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <h1>Validation form</h1>
+            <div class="col-md-8 col-offset-4 pull">
+                <form id="form" name="validation" class="user-form form-horizontal">
+                    <div class="form-group">
+                        <label name="first-name" for="first-name">First Name</label>
+                        <input required id="first-name" type="text" data-validme="name" class="form-control">
+                        <!--<p class="error">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde blanditiis, sed. Vel vero, nesciunt quis dolorum aspernatur in incidunt reiciendis.</p>-->
+                    </div>
+                    <div class="form-group">
+                        <label name="last-name" for="last-name">Last Name</label>
+                        <input required id="last-name" type="text" data-validme="name" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label name="password" for="password">Password</label>
+                        <input required id="password" type="password" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label name="email" for="email">Email</label>
+                        <input required id="email" type="email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label name="confirm-email" for="confirm-email">Confirm Email</label>
+                        <input required id="confirm-email" type="email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label name="age" for="age">Age</label>
+                        <input required id="age" type="number" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label name="info" for="info">Info</label>
+                        <textarea id="info" type="text" class="form-control"></textarea>
+                    </div>
+
+                    <hr>
+                    <h2>Payment info</h2>
+
+                    <div class="form-group">
+                        <label name="credit-card" for="credit-card">Credit card</label>
+                        <input required id="credit-card" type="number" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label name="cvv" for="cvv">CVV</label>
+                        <input required id="cvv" type="number" class="form-control">
+                    </div>
+                    <div class="form-inline">
+                        <label name="exp-date" for="exp-date-month">Valid until</label>
+                        <input required id="exp-date-month" type="number" class="form-control" size="2" min="04" max="12">
+                        <input required id="exp-date-year" type="number" class="form-control" size="2" min="17" max="23">
+                    </div>
+
+                    <hr>
+
+                    <div class="form-group">
+                        <input id="submit" type="submit" name="submit" class="btn btn-primary submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="validMe.jquery.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
