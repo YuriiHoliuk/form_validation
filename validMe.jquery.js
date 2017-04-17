@@ -15,31 +15,30 @@
                 }
             }
 
-            class Field {
+            function Field(field) {
 
-                constructor(field) {
-                    this.field = field;
-                    this.error = field.after('<p>').addClass('error').hide();
-                    this.type = field.data('validme');
-                    this.regex = INPUT_TYPES[this.type.regex];
-                    this.errorMessage = INPUT_TYPES[this.type.errorMessage];
+                this.field = field;
+                this.error = $('<p>').insertAfter(this.field).addClass('error').hide();
+                this.type = this.field.attr('data-validme');
+                this.regex = INPUT_TYPES[this.type].regex;
+                this.errorMessage = INPUT_TYPES[this.type].errorMessage;
 
-                    this.field.on('blur', (e) => {
-                        this.valid();
-                    });
-                }
+                console.log(this.field);
 
-                valid() {
-                    console.log(this);
-                    console.log(this.field.value.match(this.regex));
-                }
+                this.field.on('blur', (e) => {
+                    this.valid();
+                });
+            }
 
+            Field.prototype.valid = function() {
+                this.field.val().match(this.regex) ? console.log('correct') : this.error.text(this.errorMessage).show();
             }
 
             let fields = [];
             ths.find('input, textarea, select').each((i, field) => {
-                if ($(field).attr('data-validme') && !~SUPPORT_TYPES.indexOf($(field).data('validme'))) {
-                    fields.push(new Field(field));
+                if ($(field).attr('data-validme') && !!~SUPPORT_TYPES.indexOf($(field).attr('data-validme'))) {
+                    console.log('lol');
+                    fields.push(new Field($(field)));
                 }
             });
 
